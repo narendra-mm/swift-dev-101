@@ -13,8 +13,9 @@ in SwiftUI. There is no object-oriented programming or inheritance. It just hold
 
 ### _View_
 A _View_ is just a rectangular area screen to draw something and can get events. Anytime you behave like something, you have two sides of a coin. <br/> 
-&emsp;One is responsibility.For _View_, there is only one thing to do is to have a "body" content.<br/>
-&emsp;Two is functionality. With one variable, you get a massive maount of functionality.<br/>
+- One is responsibility. For _View_, there is only one thing to do is to have a "body" content.<br/>
+- Two is functionality. With one variable, you get a massive amount of functionality.<br/>
+
 SwiftUI is all about views.
 
 ### _var body: View_
@@ -31,4 +32,6 @@ It is a huge amount of code that's never saved but computed when it's called. It
 var i: Int
 var s: String
 ```
+some text here
+### new quote
 
