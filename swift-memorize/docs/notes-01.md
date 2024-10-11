@@ -18,8 +18,14 @@ A _View_ is just a rectangular area screen to draw something and can get events.
 
 SwiftUI is all about views.
 
-### _var body: View_
+### _var body: some View_
 body is a property of struct. All the content is computed inside it's content(inside curly braces). The values inside content is not stored but it's computed.
+
+### _some View_
+When used _some_, the type of this _View_ variable has to be any struct in the world as long as it behaves like struct. This tells Swift to execute this code, see what it returns, use that. That's the _View_ to use.
+### _VStack_
+This is to stack UI one top of one another, Similar to lego stacks.
+
 
 # Quotes
 ### _behaves like a .._
@@ -33,5 +39,6 @@ var i: Int
 var s: String
 ```
 some text here
-### new quote
+### named property
+### 
 
