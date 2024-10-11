@@ -14,9 +14,21 @@ in SwiftUI. There is no object-oriented programming or inheritance. It just hold
 ### _View_
 A _View_ is just a rectangular area screen to draw something and can get events. Anytime you behave like something, you have two sides of a coin. <br/> 
 &emsp;One is responsibility.For _View_, there is only one thing to do is to have a "body" content.<br/>
-&emsp;Two is functionality. With one variable, you get a massive maount of functionality.
+&emsp;Two is functionality. With one variable, you get a massive maount of functionality.<br/>
+SwiftUI is all about views.
+
+### _var body: View_
+body is a property of struct. All the content is computed inside it's content(inside curly braces). The values inside content is not stored but it's computed.
 
 # Quotes
 ### _behaves like a .._
-This behaves like something. ContentView behaves like a view. Behave means behaviour, functionality. Not on the data. 
+This behaves like something. ContentView behaves like a view. Behave means behaviour, functionality. Not on the data.
+
+### _computed property_
+It is a huge amount of code that's never saved but computed when it's called. It's readonly. It's calculated here. This a variable but it's read-only variable. The other one you see regular are stored properties. For ex:<br/>
+
+```swift
+var i: Int
+var s: String
+```
 
