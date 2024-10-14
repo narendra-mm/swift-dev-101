@@ -1,13 +1,32 @@
 # Xcode
 Defualt IDE to learn swift to program for Apple multiplatform devices
 
+## Preview
+It comes with differnt way to view the preview <br/>
+- Color scheme variants: switch between dark and light modes
+- Orientation variants: switch between potrait and lanscape modes
+- Dynamic Type variants: switch between different (user) font size settings available
+
 # Swift
 Base language to use to write apps for Apple devices
 
 
 # SwiftUI
 A UI framework to create UIs that follow functional programming. Sometimes it's called protocol-oriented programming.
-
+```swift
+import SwiftUI
+struct ContentView: View {
+    var body: some View {
+        VStack {
+			Image(systemName: "globe")
+				.imageScale(.large)
+                .foregroundStyle(.tint)
+            Text("Hello, world!")
+        }
+        .padding()
+    }
+}
+```
 ### _struct_
 _struct_ is keyword in swift. Short for structure. In C language they hold variables. In SwiftUI, they are heart of eveything. _struct_ are pretty much eveything
 in SwiftUI. There is no object-oriented programming or inheritance. It just holds variables and methods.
@@ -25,7 +44,33 @@ body is a property of struct. All the content is computed inside it's content(in
 ### _some View_
 When used _some_, the type of this _View_ variable has to be any struct in the world as long as it behaves like struct. This tells Swift to execute this code, see what it returns, use that. That's the _View_ to use.
 ### _VStack_
-This is to stack UI one top of one another, Similar to lego stacks.
+This is to stack UI one top of one another, Similar to lego stacks. Vstack is no different than other views, it just stacks one top of each other. There are three view in the above example, text view, image view and VStack view.
+VStack can also be decalred with parantheses
+```swift
+VStack(alignment:HorizontalAlignment.leading, spacing: 20){
+	Image(systemName: "globe")
+		.imageScale(.large)
+		.foregroundStyle(.tint)
+	Text("Hello, world!")
+}
+```
+The code inside the curly braces are called Embedded functions. In functional programming, functions are passed as arguments. It's fundamental part of functional programming. This function returns a view. The code above acts as a list (of views). There's a post-processing step hapening here, that's taking a list of views and packaging it up to something called TupleView
+```swift
+VStack(content:{
+	Image(systemName: "globe")
+		.imageScale(.large)
+		.foregroundStyle(.tint)
+	Text("Hello, world!")
+})
+.padding()
+```
+The embedded function(TupleView) here will be passed to content parameter. All the syntax is being omitted here to keep the code (look) clean. Inside the TupleView, you can't do much. It can only be used to list views, have conditions and local variables. The feature that that turns list into TupleView is called @ViewBuilder.
+
+### _Rectangle()_
+Rectangle is a view but it's also a shape in SwiftUI
+
+### _ZStack_
+They are stacks that are layout out in z-axis. Infront of one another compared to VStack (stack on top of each other), HStack(puts views nexts to each other)
 
 
 # Quotes
@@ -39,13 +84,41 @@ It is a huge amount of code that's never saved but computed when it's called. It
 var i: Int
 var s: String
 ```
-### named property
+### _named property_
 You can pass the parameters to a function along with it's name. There are various combinations to pass parameters in structs.
 ```swift
 Image(systemName: "globe")
 ```
-### parameter defualts
+### _parameter defualts_
 The default parameters you can pass it without mentions it's name. This is most commonly used syntax in many programming languages
 ```swift
 Text("Hello, world!")
 ```
+### _@ViewBuilder_
+TupleView(list of Views) or TupleView(bag of Lego)
+
+### _View modifier_
+View modifers are functions that can be called on a View(which are structs). If you use an View modifer, they will send a modifed view. View modifiers can be chained to be modified again and again. When you apply View modifer to a stack or grid, the modifers will be applied to all the views inside the TupleView
+```swift
+VStack(content:{
+	Image(systemName: "globe")
+		.imageScale(.large)//view modifer
+		.foregroundStyle(.tint)//view modifer
+	Text("Hello, world!")
+})
+.font(.largeTitle) //view modifer to a stacl
+```
+The scoping of where view modifer is being applied matters as you apply it an view itself or to a TupleView. The _imageScale_ is an modifier of _Image View_ but since it's added to a stack, it'll be sent to all the views inside. Text View just ignores it but Image View takes it in. But the _foregroundStyle_ modifier of _Image View_ will override the stack's modifer.
+```swift
+VStack(content:{
+	Image(systemName: "globe")
+		.foregroundStyle(.green)
+	Text("Hello, world!")
+})
+.font(.largeTitle)
+.foregroundStyle(.orange)//view modifer
+.imageScale(.small)//view modifer
+```
+### _shape_
+They are views that can render 2D mesh. Recangle(), Circle(), RoundedRecangle()
+
