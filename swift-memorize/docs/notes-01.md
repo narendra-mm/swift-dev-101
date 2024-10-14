@@ -4,6 +4,7 @@ Defualt IDE to learn swift to program for Apple multiplatform devices
 # Swift
 Base language to use to write apps for Apple devices
 
+
 # SwiftUI
 A UI framework to create UIs that follow functional programming. Sometimes it's called protocol-oriented programming.
 
@@ -38,7 +39,13 @@ It is a huge amount of code that's never saved but computed when it's called. It
 var i: Int
 var s: String
 ```
-some text here
 ### named property
-### 
-
+You can pass the parameters to a function along with it's name. There are various combinations to pass parameters in structs.
+```swift
+Image(systemName: "globe")
+```
+### parameter defualts
+The default parameters you can pass it without mentions it's name. This is most commonly used syntax in many programming languages
+```swift
+Text("Hello, world!")
+```
