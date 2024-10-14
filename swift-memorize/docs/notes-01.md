@@ -123,5 +123,5 @@ VStack(content:{
 They are views that can render 2D mesh. Recangle(), Circle(), [RoundedRecangle()](#roundedrectangle)
 
 # status so far
-1:02:25 / 1:11:03 of [Lecture 1 | Stanford CS193p 2023](https://www.youtube.com/watch?v=n1qabtjZ_jg&list=PLdMIs_TW2AN8cgrFVFJzJcqKACHhIyGd4&index=1)
+1:02:25 / 1:11:03 of [Lecture 1 | Stanford CS193p 2023](https://www.youtube.com/watch?v=n1qabtjZ_jg&t=3745&list=PLdMIs_TW2AN8cgrFVFJzJcqKACHhIyGd4&index=1)
 
