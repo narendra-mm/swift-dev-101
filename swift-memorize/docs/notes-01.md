@@ -66,8 +66,8 @@ VStack(content:{
 ```
 The embedded function(TupleView) here will be passed to content parameter. All the syntax is being omitted here to keep the code (look) clean. Inside the TupleView, you can't do much. It can only be used to list views, have conditions and local variables. The feature that that turns list into TupleView is called @ViewBuilder.
 
-### _Rectangle()_
-Rectangle is a view but it's also a shape in SwiftUI
+### _RoundedRectangle()_
+RoundedRectangle is a view but it's also a shape in SwiftUI. They can be used to render a shape, in this cased, a rounded rectangle. You can only view either a stroke or fill but not both at the same time. If you need both, you need to make two views and layer them in ZStack.
 
 ### _ZStack_
 They are stacks that are layout out in z-axis. Infront of one another compared to VStack (stack on top of each other), HStack(puts views nexts to each other)
@@ -121,4 +121,7 @@ VStack(content:{
 ```
 ### _shape_
 They are views that can render 2D mesh. Recangle(), Circle(), RoundedRecangle()
+
+# status so far
+1:02:25 / 1:11:03 of [Lecture 1 | Stanford CS193p 2023](https://www.youtube.com/watch?v=n1qabtjZ_jg&list=PLdMIs_TW2AN8cgrFVFJzJcqKACHhIyGd4&index=1)
 
