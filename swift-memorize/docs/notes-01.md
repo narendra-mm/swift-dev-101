@@ -72,6 +72,58 @@ RoundedRectangle is a view but it's also a shape in SwiftUI. They can be used to
 ### _ZStack_
 They are stacks that are layout out in z-axis. Infront of one another compared to VStack (stack on top of each other), HStack(puts views nexts to each other)
 
+### _view reusability_
+To create lot of views without copy pasting lot of code, you can create a new struct derived from View. This helps to reuse the code and expand one UI to be reused over and over. Also, once source to change.
+```swift
+//create a new view
+struct CardView:View{ 
+	var body:some View{
+		ZStack(content:{
+			RoundedRectangle(cornerRadius: 12)
+				.foregroundColor(.white)
+			RoundedRectangle(cornerRadius: 12)
+				.strokeBorder(lineWidth: 3)
+			Text("👻")
+		})
+	}
+}
+
+struct ContentView: View {
+    var body: some View {
+		HStack{
+			CardView() //call the new view method
+			CardView() //call the new view method
+		}
+		.foregroundStyle(.orange)//view modifer
+		.padding()
+		
+    }
+}
+```
+
+### _Arguments of Structs_
+To pass an argument to struct, just create a var. There are two common kinds of arguments
+- Required Arguments: These arguments should always be passed on. They should also be declared first in the sequence they were created.
+- Optional Arguments: Thes arguments store a default value and are optional to be called.
+```swift
+struct CardView:View{
+	var isFaceUp:Bool //Create a var to pass a value to struct.
+	var scale:Int = 2 //These vars can have a defualt value
+	var scale:
+	var body:some View{
+			Text("👻")
+	}
+}
+```
+For the above example you should call
+```swift
+CardView(isFaceUp: true) //isFaceUp should **always** be mentioned in the code
+CardView(isFaceUp: true, scale: 5) // scale is optional
+
+CardView() //results in an error
+CardView(scale:4, isFaceUp: true) //results in an error as isFaceUp does not have default 
+```
+
 
 # Quotes
 ### _behaves like a .._
