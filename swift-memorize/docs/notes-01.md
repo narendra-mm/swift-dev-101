@@ -111,7 +111,7 @@ struct CardView:View{
 	var scale:Int = 2 //These vars can have a defualt value
 	var scale:
 	var body:some View{
-			Text("👻")
+		Text("👻")
 	}
 }
 ```
