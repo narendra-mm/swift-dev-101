@@ -174,6 +174,57 @@ VStack(content:{
 ### _shape_
 They are views that can render 2D mesh. Recangle(), Circle(), [RoundedRecangle()](#roundedrectangle)
 
+### _trailing closure syntax_
+if the last argument has a computed function inside curly braces, their name can be omitted.
+
+The below struct method can be turned into....
+```swift
+ZStack(alignment: .top, content:{
+	if(isFaceUp){
+		RoundedRectangle(cornerRadius: 12)
+			.foregroundColor(.white)
+		RoundedRectangle(cornerRadius: 12)
+			.strokeBorder(lineWidth: 3)
+		Text("👻").font(.largeTitle)
+	}
+	else {
+		RoundedRectangle(cornerRadius: 12)
+	}
+	
+})
+```
+... a trailing closure syntax without mentioning parameter name.
+```swift
+ZStack(alignment: .top){
+	if(isFaceUp){
+		RoundedRectangle(cornerRadius: 12)
+			.foregroundColor(.white)
+		RoundedRectangle(cornerRadius: 12)
+			.strokeBorder(lineWidth: 3)
+		Text("👻").font(.largeTitle)
+	}
+	else {
+		RoundedRectangle(cornerRadius: 12)
+	}
+}
+```
+we can go step one further if we use default values of ZStack. You can just pass the computed property with trailing closure syntax. Here we remove paranthesis (to call a function) along with no mentioning of _content_ parameter name.
+```swift
+ZStack{
+	if(isFaceUp){
+		RoundedRectangle(cornerRadius: 12)
+			.foregroundColor(.white)
+		RoundedRectangle(cornerRadius: 12)
+			.strokeBorder(lineWidth: 3)
+		Text("👻").font(.largeTitle)
+	}
+	else {
+		RoundedRectangle(cornerRadius: 12)
+	}
+}
+```
+
+
 # status so far
-1:02:25 / 1:11:03 of [Lecture 1 | Stanford CS193p 2023](https://www.youtube.com/watch?v=n1qabtjZ_jg&t=3745&list=PLdMIs_TW2AN8cgrFVFJzJcqKACHhIyGd4&index=1)
+0:21 / 1:11:21 of [Lecture 2 | Stanford CS193p 2023](https://www.youtube.com/watch?v=sXiD-2XrkKQ&t=21&list=PLdMIs_TW2AN8cgrFVFJzJcqKACHhIyGd4&index=2)
 
